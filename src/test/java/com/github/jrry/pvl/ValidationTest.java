@@ -12,14 +12,13 @@ import javax.validation.ValidatorFactory;
 
 import org.junit.Test;
 
-
 /**
  * The Class IdentityCardTest.
  * 
  * 
  * @author Jarosław Pawłowski
  */
-public class IdentityCardTest {
+public class ValidationTest {
 	
 	/** The Constant validator. */
 	private static final Validator validator;
@@ -50,5 +49,26 @@ public class IdentityCardTest {
 		Set<ConstraintViolation<IdentityCard>> errors = validator.validate(vt);
         assertFalse(errors.isEmpty());
 	}
+	
+	/**
+	 * Email test true.
+	 */
+	@Test
+	public void emailTestTrue() {
+		Email email = new Email("o2.pl");
+		Set<ConstraintViolation<Email>> errors = validator.validate(email);
+		assertTrue(errors.isEmpty());
+	}
+	
+	/**
+	 * Email test false.
+	 */
+	@Test
+	public void emailTestFalse() {
+		Email email = new Email("bugle.pl");
+		Set<ConstraintViolation<Email>> errors = validator.validate(email);
+		assertFalse(errors.isEmpty());
+	}
+	
 
 }

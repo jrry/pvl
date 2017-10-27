@@ -25,7 +25,7 @@ import javax.validation.Payload;
 @Retention(RUNTIME)
 public @interface PVL_IdentityCard {
 
-	String message() default "Incorrect Indetity Card format";
+	String message() default "Incorrect Indetity Card";
 
 	Class<?>[] groups() default { };
 
