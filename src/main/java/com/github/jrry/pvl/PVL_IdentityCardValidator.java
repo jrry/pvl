@@ -14,6 +14,9 @@ public class PVL_IdentityCardValidator implements ConstraintValidator<PVL_Identi
 	private static final int[] tab = {7, 3, 1};
 	
 	public boolean isValid(String value, ConstraintValidatorContext context) {
+		if (value == null)
+			return false;
+		
         char[] series, number;
         int sum = 0;
 
@@ -36,5 +39,4 @@ public class PVL_IdentityCardValidator implements ConstraintValidator<PVL_Identi
         
 		return sum == number[0];
 	}
-
 }

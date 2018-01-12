@@ -19,11 +19,12 @@ import org.junit.Test;
  * @author Jarosław Pawłowski
  */
 public class ValidationTest {
-	
+
 	/** The Constant validator. */
 	private static final Validator validator;
 
-    static {
+    static 
+    {
         Configuration<?> config = Validation.byDefaultProvider().configure();
         ValidatorFactory factory = config.buildValidatorFactory();
         validator = factory.getValidator();
@@ -54,8 +55,8 @@ public class ValidationTest {
 	 * Email test true.
 	 */
 	@Test
-	public void emailTestTrue() {
-		Email email = new Email("o2.pl");
+	public void EmailTestTrue() {
+		Email email = new Email("test@o2.pl");
 		Set<ConstraintViolation<Email>> errors = validator.validate(email);
 		assertTrue(errors.isEmpty());
 	}
@@ -64,11 +65,29 @@ public class ValidationTest {
 	 * Email test false.
 	 */
 	@Test
-	public void emailTestFalse() {
-		Email email = new Email("bugle.pl");
+	public void EmailTestFalse() {
+		Email email = new Email("test@bugle.pl");
 		Set<ConstraintViolation<Email>> errors = validator.validate(email);
 		assertFalse(errors.isEmpty());
 	}
 	
-
+	/**
+	 * NIP test true.
+	 */
+	@Test
+    public void NIPTestTrue() {
+		NIP nip = new NIP("362-398-12-30");
+		Set<ConstraintViolation<NIP>> errors = validator.validate(nip);
+        assertTrue(errors.isEmpty());
+	}
+	
+	/**
+	 * NIP test false.
+	 */
+	@Test
+	public void NIPTestFalse() {
+		NIP nip = new NIP("362-123-12-30");
+		Set<ConstraintViolation<NIP>> errors = validator.validate(nip);
+        assertFalse(errors.isEmpty());
+	}
 }

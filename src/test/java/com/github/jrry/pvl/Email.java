@@ -7,7 +7,7 @@ package com.github.jrry.pvl;
  * @author Jarosław Pawłowski
  */
 public class Email {
-	
+
 	/** The email adress. */
 	@PVL_Email
 	private String adress;

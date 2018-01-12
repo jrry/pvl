@@ -7,7 +7,7 @@ package com.github.jrry.pvl;
  * @author Jarosław Pawłowski
  */
 public class IdentityCard {
-	
+
 	/** The identity card field with validation. */
 	@PVL_IdentityCard
 	private String identityCard;

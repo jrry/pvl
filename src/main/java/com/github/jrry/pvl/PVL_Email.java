@@ -24,6 +24,7 @@ import javax.validation.Payload;
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, PARAMETER })
 @Retention(RUNTIME)
 public @interface PVL_Email {
+
 	String message() default "Incorrect email adress";
 
 	Class<?>[] groups() default { };
