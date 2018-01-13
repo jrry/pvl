@@ -3,7 +3,6 @@ package com.github.jrry.pvl;
 /**
  * The Class Pesel.
  *
- *
  * @author Jarosław Pawłowski
  */
 class Pesel {

@@ -13,17 +13,16 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * The string has to be a well-formed PESEL
  *
- *
  * @author Jarosław Pawłowski
  */
 @Documented
 @Constraint(validatedBy = PVL_PeselValidator.class)
-@Target({ METHOD, FIELD, ANNOTATION_TYPE, PARAMETER })
+@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER})
 @Retention(RUNTIME)
 public @interface PVL_Pesel {
     String message() default "Incorrect PESEL";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

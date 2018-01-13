@@ -15,19 +15,18 @@ import javax.validation.Payload;
 
 /**
  * The string has to be a well-formed NIP
- * 
- * 
+ *
  * @author Jarosław Pawłowski
  */
 @Documented
 @Constraint(validatedBy = PVL_NIPValidator.class)
-@Target({ METHOD, FIELD, ANNOTATION_TYPE, PARAMETER })
+@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER})
 @Retention(RUNTIME)
 public @interface PVL_NIP {
 
-	String message() default "Incorrect NIP";
+    String message() default "Incorrect NIP";
 
-	Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

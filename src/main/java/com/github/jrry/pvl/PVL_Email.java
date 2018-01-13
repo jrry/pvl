@@ -15,19 +15,18 @@ import javax.validation.Payload;
 
 /**
  * The string has to be a well-formed email with check server exist
- * 
- * 
+ *
  * @author Jarosław Pawłowski
  */
 @Documented
 @Constraint(validatedBy = PVL_EmailValidator.class)
-@Target({ METHOD, FIELD, ANNOTATION_TYPE, PARAMETER })
+@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER})
 @Retention(RUNTIME)
 public @interface PVL_Email {
 
-	String message() default "Incorrect email adress";
+    String message() default "Incorrect email adress";
 
-	Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

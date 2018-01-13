@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class PVL_PeselValidator implements ConstraintValidator<PVL_Pesel, String> {
 
-    private static final int[] tab = {1,3,7,9,1,3,7,9,1,3};
+    private static final int[] tab = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
     private static Pattern pattern = Pattern.compile("^\\d{11}$", Pattern.CASE_INSENSITIVE);
 
     @Override
@@ -23,16 +23,16 @@ public class PVL_PeselValidator implements ConstraintValidator<PVL_Pesel, String
 
         int year, month, day;
 
-        day = Integer.parseInt(value.substring(4,6));
-        month = Integer.parseInt(value.substring(2,4));
+        day = Integer.parseInt(value.substring(4, 6));
+        month = Integer.parseInt(value.substring(2, 4));
 
         if (month > 32)
             return false;
         else if (month > 12) {
             month -= 20;
-            year = Integer.parseInt("20" + value.substring(0,2));
+            year = Integer.parseInt("20" + value.substring(0, 2));
         } else {
-            year = Integer.parseInt("19" + value.substring(0,2));
+            year = Integer.parseInt("19" + value.substring(0, 2));
         }
 
         LocalDate now = LocalDate.now();
@@ -51,7 +51,7 @@ public class PVL_PeselValidator implements ConstraintValidator<PVL_Pesel, String
         int last = elements[10] - '0';
 
         for (int i = 0; i < tab.length; i++) {
-            sum += (tab[i] * (elements[i]-'0'));
+            sum += (tab[i] * (elements[i] - '0'));
         }
 
         sum %= 10;

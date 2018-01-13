@@ -15,19 +15,18 @@ import javax.validation.Payload;
 
 /**
  * The string has to be a well-formed Identity Card format
- * 
- * 
+ *
  * @author Jarosław Pawłowski
  */
 @Documented
 @Constraint(validatedBy = PVL_IdentityCardValidator.class)
-@Target({ METHOD, FIELD, ANNOTATION_TYPE, PARAMETER })
+@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER})
 @Retention(RUNTIME)
 public @interface PVL_IdentityCard {
 
-	String message() default "Incorrect Indetity Card";
+    String message() default "Incorrect Indetity Card";
 
-	Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }
