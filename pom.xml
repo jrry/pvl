@@ -9,7 +9,7 @@
 
   <name>PVL - Polish Validation Library</name>
   <url>http://gitgub.com/jrr/pvl/</url>
-  
+
   <developers>
   	<developer>
   		<id>jrry</id>
@@ -18,14 +18,16 @@
   </developers>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 
   <dependencies>
     <dependency>
     	<groupId>org.hibernate</groupId>
     	<artifactId>hibernate-validator</artifactId>
-    	<version>6.0.3.Final</version>
+    	<version>6.0.7.Final</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

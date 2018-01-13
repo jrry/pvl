@@ -6,7 +6,7 @@ package com.github.jrry.pvl;
  * 
  * @author Jarosław Pawłowski
  */
-public class IdentityCard {
+class IdentityCard {
 
 	/** The identity card field with validation. */
 	@PVL_IdentityCard
@@ -17,7 +17,7 @@ public class IdentityCard {
 	 *
 	 * @param identityCard the identity card
 	 */
-	public IdentityCard(String identityCard) {
+	IdentityCard(String identityCard) {
 		this.identityCard = identityCard;
 	}
 }

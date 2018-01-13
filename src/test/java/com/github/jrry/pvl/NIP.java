@@ -6,7 +6,7 @@ package com.github.jrry.pvl;
  * 
  * @author Jarosław Pawłowski
  */
-public class NIP {
+class NIP {
 
 	@PVL_NIP
 	private String NIP;
@@ -16,7 +16,7 @@ public class NIP {
 	 *
 	 * @param NIP the NIP
 	 */
-	public NIP(String NIP) {
+	NIP(String NIP) {
 		this.NIP = NIP;
 	}
 }

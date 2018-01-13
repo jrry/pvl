@@ -6,7 +6,7 @@ package com.github.jrry.pvl;
  * 
  * @author Jarosław Pawłowski
  */
-public class Email {
+class Email {
 
 	/** The email adress. */
 	@PVL_Email
@@ -17,7 +17,7 @@ public class Email {
 	 *
 	 * @param adress the adress
 	 */
-	public Email(String adress) {
+	Email(String adress) {
 		this.adress = adress;
 	}
 	
