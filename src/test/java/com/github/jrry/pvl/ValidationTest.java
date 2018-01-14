@@ -100,4 +100,32 @@ public class ValidationTest {
         Set<ConstraintViolation<Pesel>> errors = validator.validate(pesel);
         assertFalse(errors.isEmpty());
     }
+
+    @Test
+    public void RegonTestTrue1() {
+        REGON regon = new REGON("732065814");
+        Set<ConstraintViolation<REGON>> errors = validator.validate(regon);
+        assertTrue(errors.isEmpty());
+    }
+
+    @Test
+    public void RegonTestTrue2() {
+        REGON regon = new REGON("23511332857188");
+        Set<ConstraintViolation<REGON>> errors = validator.validate(regon);
+        assertTrue(errors.isEmpty());
+    }
+
+    @Test
+    public void RegonTestFalse1() {
+        REGON regon = new REGON("732065815");
+        Set<ConstraintViolation<REGON>> errors = validator.validate(regon);
+        assertFalse(errors.isEmpty());
+    }
+
+    @Test
+    public void RegonTestFalse2() {
+        REGON regon = new REGON("23511332857189");
+        Set<ConstraintViolation<REGON>> errors = validator.validate(regon);
+        assertFalse(errors.isEmpty());
+    }
 }
