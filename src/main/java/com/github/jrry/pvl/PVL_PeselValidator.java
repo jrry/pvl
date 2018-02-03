@@ -17,6 +17,9 @@ public class PVL_PeselValidator implements ConstraintValidator<PVL_Pesel, String
     private static Pattern pattern = Pattern.compile("^\\d{11}$", Pattern.CASE_INSENSITIVE);
 
     @Override
+    public void initialize(PVL_Pesel constraintAnnotation) {}
+
+    @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
         if (value == null || !pattern.matcher(value).matches())
             return false;

@@ -14,6 +14,9 @@ public class PVL_REGONValidator implements ConstraintValidator<PVL_REGON, String
     private static final int[] tab2 = {2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8};
 
     @Override
+    public void initialize(PVL_REGON constraintAnnotation) {}
+
+    @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
         if (!value.matches("[0-9]+"))
             return false;

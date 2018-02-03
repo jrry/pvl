@@ -16,17 +16,14 @@ import javax.validation.ConstraintValidatorContext;
  */
 public class PVL_EmailValidator implements ConstraintValidator<PVL_Email, String> {
 
-    /**
-     * The Constant EMAIL_REGEX.
-     */
     private static final String EMAIL_REGEX = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
 
-    /**
-     * The pattern.
-     */
     private static Pattern pattern = Pattern.compile(EMAIL_REGEX, Pattern.CASE_INSENSITIVE);
 
+    @Override
+    public void initialize(PVL_Email constraintAnnotation) {}
 
+    @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         if (value == null || !pattern.matcher(value).matches())
             return false;

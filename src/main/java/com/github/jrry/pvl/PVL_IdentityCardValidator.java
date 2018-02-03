@@ -12,6 +12,10 @@ public class PVL_IdentityCardValidator implements ConstraintValidator<PVL_Identi
 
     private static final int[] tab = {7, 3, 1};
 
+    @Override
+    public void initialize(PVL_IdentityCard constraintAnnotation) {}
+
+    @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         if (value == null)
             return false;

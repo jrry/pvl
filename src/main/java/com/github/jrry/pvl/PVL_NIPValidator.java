@@ -12,6 +12,10 @@ public class PVL_NIPValidator implements ConstraintValidator<PVL_NIP, String> {
 
     private static final int[] tab = {6, 5, 7, 2, 3, 4, 5, 6, 7};
 
+    @Override
+    public void initialize(PVL_NIP constraintAnnotation) {}
+
+    @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         if (value == null)
             return false;
