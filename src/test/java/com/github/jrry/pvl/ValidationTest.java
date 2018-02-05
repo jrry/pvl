@@ -128,4 +128,18 @@ public class ValidationTest {
         Set<ConstraintViolation<REGON>> errors = validator.validate(regon);
         assertFalse(errors.isEmpty());
     }
+
+    @Test
+    public void IBANTestTrue() {
+        IBAN iban = new IBAN("PL83101010230000261395100000");
+        Set<ConstraintViolation<IBAN>> errors = validator.validate(iban);
+        assertTrue(errors.isEmpty());
+    }
+
+    @Test
+    public void IBANTestFalse() {
+        IBAN iban = new IBAN("EN83101010230000261395100000");
+        Set<ConstraintViolation<IBAN>> errors = validator.validate(iban);
+        assertFalse(errors.isEmpty());
+    }
 }

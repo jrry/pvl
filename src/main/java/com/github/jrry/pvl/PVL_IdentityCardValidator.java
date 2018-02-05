@@ -17,9 +17,7 @@ public class PVL_IdentityCardValidator implements ConstraintValidator<PVL_Identi
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        if (value == null)
-            return false;
-        if (!value.matches("[A-Z]{3}[0-9]{6}"))
+        if (value == null || !value.matches("[A-Z]{3}[0-9]{6}"))
             return false;
 
         char[] series, number;
