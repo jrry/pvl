@@ -18,4 +18,7 @@ private String pesel;
 
 @PVL_REGON
 private String regon;
+
+@PVL_IBAN
+private String numer_konta_bankowego
 ```
