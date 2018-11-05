@@ -13,6 +13,9 @@ private String nip; // default message
 @PVL_IdentityCard
 private String nr_i_seria_dowodu_osobistego;
 
+@PVL_Password(min = 6, max = 25, characters = "!@#$%^&*()_-+=?.,")
+private String password;
+
 @PVL_Pesel
 private String pesel;
 
